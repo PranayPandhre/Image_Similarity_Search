@@ -94,7 +94,22 @@ ResNet (Residual Network) is a deep convolutional neural network that revolution
 
 ---
 
-### **3. Siamese Network**
+### **3. SIFT**
+- The SIFT method is widely used for image similarity search due to its robustness and ability to identify and match distinctive features in images, regardless of variations. SIFT methodology mainly involves keypoints and descriptors. Keypoints and descriptors  are fundamental concepts used to identify and describe distinctive regions in an image for tasks like similarity search. Keypoints identify where the distinctive features are located in the image. Each keypoint corresponds to a specific pixel in the image, typically representing corners, edges, or blobs that are rich in texture and less likely to change under transformations. Descriptors describe what those features look like. SIFT generates a 128-dimensional vector for each keypoint. This vector encodes gradient magnitudes and directions in a local region around the keypoint.
+
+#### **Process**
+- The SIFT process identifies keypoints (scale-invariant points of interest) and computes feature descriptors for images. Descriptors from two images are matched using a brute-force matcher with Lowe's ratio test to filter good matches.
+- A similarity score is calculated based on the number of valid matches relative to the number of keypoints. Matches are visualized using OpenCV, highlighting the corresponding features between images.
+- The process compares representative images from Fashion MNIST classes with random samples to evaluate intra-class and inter-class similarity, plotting matches and reporting similarity scores for analysis.
+
+#### **Advantages**
+- SIFT is robust to changes in scale and orientation, ensuring reliable feature detection and matching across transformed images.
+- The 128-dimensional descriptors provide detailed representations of local image regions, allowing accurate and discriminative matching.
+- SIFT can identify matches even when images are cropped or contain partial overlaps, making it ideal for image similarity search.
+
+---
+
+### **4. Siamese Network**
 - A Siamese Network is a neural network architecture specifically designed for similarity learning, where the goal is to determine whether two inputs are similar or dissimilar. It consists of two identical subnetworks that process two inputs independently and produce feature embeddings, which are then compared using a distance metric (e.g., Euclidean distance) to quantify similarity. Siamese Networks are widely used for image similarity search because they are explicitly trained to learn a similarity function rather than classifying inputs.
 
 #### **Process**
@@ -110,20 +125,6 @@ ResNet (Residual Network) is a deep convolutional neural network that revolution
 - In retrieval tasks (e.g., finding similar images), Siamese networks eliminate the need for exhaustive search by mapping inputs into an embedding space where simple distance metrics suffice for comparison.
 
 ---
-
-### **4. SIFT**
-- The SIFT method is widely used for image similarity search due to its robustness and ability to identify and match distinctive features in images, regardless of variations. SIFT methodology mainly involves keypoints and descriptors. Keypoints and descriptors  are fundamental concepts used to identify and describe distinctive regions in an image for tasks like similarity search. Keypoints identify where the distinctive features are located in the image. Each keypoint corresponds to a specific pixel in the image, typically representing corners, edges, or blobs that are rich in texture and less likely to change under transformations. Descriptors describe what those features look like. SIFT generates a 128-dimensional vector for each keypoint. This vector encodes gradient magnitudes and directions in a local region around the keypoint.
-
-#### **Process**
-- The SIFT process identifies keypoints (scale-invariant points of interest) and computes feature descriptors for images. Descriptors from two images are matched using a brute-force matcher with Lowe's ratio test to filter good matches.
-- A similarity score is calculated based on the number of valid matches relative to the number of keypoints. Matches are visualized using OpenCV, highlighting the corresponding features between images.
-- The process compares representative images from Fashion MNIST classes with random samples to evaluate intra-class and inter-class similarity, plotting matches and reporting similarity scores for analysis.
-
-#### **Advantages**
-- SIFT is robust to changes in scale and orientation, ensuring reliable feature detection and matching across transformed images.
-- The 128-dimensional descriptors provide detailed representations of local image regions, allowing accurate and discriminative matching.
-- SIFT can identify matches even when images are cropped or contain partial overlaps, making it ideal for image similarity search.
-
    
 ## Results_Analysis
 
