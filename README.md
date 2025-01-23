@@ -1,6 +1,6 @@
 #  Image Similarity Search using FMNIST dataset
 
-This repository contains my experiments on **Performing image similarity search** using **Autoencoders**, **ResNet101**, **Siamese_Network**, and **SIFT**. The experiments were conducted on the **Fashion MNIST (FMNIST)** dataset which contains grayscale fashion clothing images. The repository includes the experiemnts conducted using the mentioned methods, and the code documentation (which includes the results of the experiemnts) of each experiment in it's respective folder.
+This repository contains my experiments on **Performing image similarity search** using **Autoencoders**, **ResNet101**, **Siamese_Network**, and **SIFT**. The experiments were conducted on the **Fashion MNIST (FMNIST)** dataset which contains grayscale fashion clothing images. The repository includes the experimwnts conducted using the mentioned methods, and the code documentation (which includes the results of the experiments) of each experiment in its respective folder.
 
 ---
 
@@ -31,7 +31,7 @@ The methodologies used for performing **Image similarity search** are as follows
 **FMNIST:**
     - A dataset containing grayscale fashion clothing images with the following categories.
     - Includes T-shirts, trousers, pullovers, dresses, coats, sandals, shirts, sneakers, bags, and ankle boots. 
-    - Size of images in the dataset 28x28 pixels.
+    - The size of images in the dataset is 28x28 pixels.
     - Lightweight and commonly used as a benchmark image classification and similarity search methods.
 
 ---
@@ -98,7 +98,7 @@ ResNet (Residual Network) is a deep convolutional neural network that revolution
 - A Siamese Network is a neural network architecture specifically designed for similarity learning, where the goal is to determine whether two inputs are similar or dissimilar. It consists of two identical subnetworks that process two inputs independently and produce feature embeddings, which are then compared using a distance metric (e.g., Euclidean distance) to quantify similarity. Siamese Networks are widely used for image similarity search because they are explicitly trained to learn a similarity function rather than classifying inputs.
 
 #### **Process**
-- The dataset is prepared using the **create_triplets** function creates triplets of images (anchor, positive, and negative) to train the network. Positive images belong to the same class as the anchor, while negative images belong to a different class.
+- The dataset is prepared using the **create_triplets** function, which creates triplets of images (anchor, positive, and negative) to train the network. Positive images belong to the same class as the anchor, while negative images belong to a different class.
 - The **build_siamese_network** function constructs a feature extraction model using convolutional layers to generate a compact 64-dimensional embedding for each image.
 - The custom **triplet_loss** ensures embeddings for anchor-positive pairs are closer than anchor-negative pairs by a specified margin (0.2), improving similarity learning.
 - The **create_triplet_model** function combines the Siamese network with three inputs (anchor, positive, and negative) and stacks their embeddings for loss computation during training.
@@ -112,7 +112,7 @@ ResNet (Residual Network) is a deep convolutional neural network that revolution
 ---
 
 #### **4. SIFT**
-- SIFT method is widely used for image similarity search due to its robustness and ability to identify and match distinctive features in images, regardless of variations. SIFT methodology mainly involves keypoints and descriptors. Keypoints and descriptors  are fundamental concepts used to identify and describe distinctive regions in an image for tasks like similarity search. Keypoints identify where the distinctive features are located in the image. Each keypoint corresponds to a specific pixel in the image, typically representing corners, edges, or blobs that are rich in texture and less likely to change under transformations. Descriptors describe what those features look like. SIFT generates a 128-dimensional vector for each keypoint. This vector encodes gradient magnitudes and directions in a local region around the keypoint.
+- The SIFT method is widely used for image similarity search due to its robustness and ability to identify and match distinctive features in images, regardless of variations. SIFT methodology mainly involves keypoints and descriptors. Keypoints and descriptors  are fundamental concepts used to identify and describe distinctive regions in an image for tasks like similarity search. Keypoints identify where the distinctive features are located in the image. Each keypoint corresponds to a specific pixel in the image, typically representing corners, edges, or blobs that are rich in texture and less likely to change under transformations. Descriptors describe what those features look like. SIFT generates a 128-dimensional vector for each keypoint. This vector encodes gradient magnitudes and directions in a local region around the keypoint.
 
 #### **Process**
 - The SIFT process identifies keypoints (scale-invariant points of interest) and computes feature descriptors for images. Descriptors from two images are matched using a brute-force matcher with Lowe's ratio test to filter good matches.
@@ -130,9 +130,10 @@ ResNet (Residual Network) is a deep convolutional neural network that revolution
 
 ## References
 
-- [Autoencoders and Dimensionality Reduction](https://arxiv.org/abs/1512.03385) - _A key paper that describes the use of autoencoders for reducing dimensionality and unsupervised learning._
-- [Explainable Image Similarity: Integrating Siamese Networks and Grad-CAM](https://arxiv.org/pdf/2310.07678) 
-- [Siamese Networks for One-Shot Learning](https://www.cs.cmu.edu/~rsalakhu/papers/oneshot1.pdf) - _A foundational paper introducing Siamese Networks for tasks requiring one-shot learning._
+- [An Autoencoder-Based Image Descriptor for Image Matching](https://www.proquest.com/openview/1d6c43922b81d4fb9eed4dacef3378ee/1?pq-origsite=gscholar&cbl=1976345)
+- [A novel ResNet101 model based on dense dilated convolution for image classification](https://link.springer.com/article/10.1007/s42452-021-04897-7) 
+- [Robust image matching based on the information of SIFT](https://www.sciencedirect.com/science/article/abs/pii/S0030402618309021?via%3Dihub)
+- [Siamese Network Features for Image Matching](https://oulurepo.oulu.fi/bitstream/handle/10024/24464/nbnfi-fe2019090526960.pdf;jsessionid=7F6C93BB152953832D853F0934BCD262?sequence=1)
 - [FMNIST Dataset Overview](https://github.com/zalandoresearch/fashion-mnist) - _Detailed information on the FMNIST dataset, including benchmarks and evaluation metrics._
 
 ## Requirements
