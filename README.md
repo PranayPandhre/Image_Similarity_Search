@@ -79,7 +79,7 @@ An Autoencoder is a type of neural network designed for unsupervised learning th
 
 ---
 
-#### **2. ResNet101**
+### **2. ResNet101**
 ResNet (Residual Network) is a deep convolutional neural network that revolutionized deep learning by introducing residual connections, which mitigate the vanishing gradient problem, enabling the effective training of very deep networks. It is widely used for image similarity search because its pre-trained versions (e.g., ResNet-50, ResNet-101) can extract rich, high-dimensional feature embeddings from images, capturing complex patterns and structures. These embeddings are particularly suitable for measuring image similarity using metrics like cosine distance. 
 
 #### **Process**
@@ -94,7 +94,7 @@ ResNet (Residual Network) is a deep convolutional neural network that revolution
 
 ---
 
-#### **3. Siamese Network**
+### **3. Siamese Network**
 - A Siamese Network is a neural network architecture specifically designed for similarity learning, where the goal is to determine whether two inputs are similar or dissimilar. It consists of two identical subnetworks that process two inputs independently and produce feature embeddings, which are then compared using a distance metric (e.g., Euclidean distance) to quantify similarity. Siamese Networks are widely used for image similarity search because they are explicitly trained to learn a similarity function rather than classifying inputs.
 
 #### **Process**
@@ -111,7 +111,7 @@ ResNet (Residual Network) is a deep convolutional neural network that revolution
 
 ---
 
-#### **4. SIFT**
+### **4. SIFT**
 - The SIFT method is widely used for image similarity search due to its robustness and ability to identify and match distinctive features in images, regardless of variations. SIFT methodology mainly involves keypoints and descriptors. Keypoints and descriptors  are fundamental concepts used to identify and describe distinctive regions in an image for tasks like similarity search. Keypoints identify where the distinctive features are located in the image. Each keypoint corresponds to a specific pixel in the image, typically representing corners, edges, or blobs that are rich in texture and less likely to change under transformations. Descriptors describe what those features look like. SIFT generates a 128-dimensional vector for each keypoint. This vector encodes gradient magnitudes and directions in a local region around the keypoint.
 
 #### **Process**
@@ -134,6 +134,6 @@ ResNet (Residual Network) is a deep convolutional neural network that revolution
 - [A novel ResNet101 model based on dense dilated convolution for image classification](https://link.springer.com/article/10.1007/s42452-021-04897-7) 
 - [Robust image matching based on the information of SIFT](https://www.sciencedirect.com/science/article/abs/pii/S0030402618309021?via%3Dihub)
 - [Siamese Network Features for Image Matching](https://oulurepo.oulu.fi/bitstream/handle/10024/24464/nbnfi-fe2019090526960.pdf;jsessionid=7F6C93BB152953832D853F0934BCD262?sequence=1)
-- [FMNIST Dataset Overview](https://github.com/zalandoresearch/fashion-mnist) - _Detailed information on the FMNIST dataset, including benchmarks and evaluation metrics._
+- [FMNIST Dataset Overview](https://github.com/zalandoresearch/fashion-mnist)
 
 ## Requirements
