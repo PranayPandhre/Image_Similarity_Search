@@ -1,6 +1,6 @@
 #  Image Similarity Search using FMNIST dataset
 
-This repository contains my experiments on **Performing image similarity search** using **Autoencoders**, **ResNet101**, **Siamese_Network**, and **SIFT**. The experiments were conducted on the **Fashion MNIST (FMNIST)** dataset which contains grayscale fashion clothing images. The repository includes the experimwnts conducted using the mentioned methods, and the code documentation (which includes the results of the experiments) of each experiment in its respective folder.
+This repository contains my experiments on **Performing image similarity search** using **Autoencoders**, **ResNet101**, **Siamese_Network**, and **SIFT**. The experiments were conducted on the **Fashion MNIST (FMNIST)** dataset which contains grayscale fashion clothing images. The repository includes the experiments conducted using the mentioned methods, and the code documentation (which includes the results of the experiments) of each experiment in its respective folder.
 
 ---
 
@@ -128,6 +128,10 @@ ResNet (Residual Network) is a deep convolutional neural network that revolution
    
 ## Results_Analysis
 
+### **1. Autoencoder**
+### **2. ResNet101**
+### **3. SIFT**
+### **4. Siamese Network**
 
 ## References
 
