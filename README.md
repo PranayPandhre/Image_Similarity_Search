@@ -43,21 +43,24 @@ Autoencoders/
 ├── Autoencoder.ipynb
 ├── Autoencoder_documentation.pdf
 ├── autoencoder_model.h5
+
 ResNet101/
 ├── Resnet101.ipynb
 ├── Resnet_documentation.pdf
-├── Siamese_network
-    ├── Siamese_network.ipynb
-    ├── Siamese_Network_documentation.pdf
-    ├── Siamese_saved_models/
-        ├── siamese_model.h5
-        └── siamese_model.keras
+
+Siamese_network/
+├── Siamese_network.ipynb
+├── Siamese_Network_documentation.pdf
+├── Siamese_saved_models/
+    ├── siamese_model.h5
+    └── siamese_model.keras
+
 SIFT/
 ├── SIFT.ipynb
 ├── SIFT_documentation.pdf
 
-
 README.md
+
 ```
 
 ## Methods Used
