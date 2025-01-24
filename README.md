@@ -128,10 +128,60 @@ ResNet (Residual Network) is a deep convolutional neural network that revolution
    
 ## Results_Analysis
 
-### **1. Autoencoder**
+### **1. Autoencoder Results:**
+
+#### Summary of the Autoencoder Results
+Top-5 Similarity Results:
+- Precision: **0.8000** - This indicates that 80% of the retrieved images in the top-5 for each query image are relevant (belong to the same class as the query image).
+- Recall: **0.0040** - This suggests that the retrieved images account for only a small fraction of all relevant images for the query class.
+- Retrieval Accuracy: **1.0000** - This means that for 100% of the query images, the most similar image retrieved was correctly classified (matches the query image class).
+- The retrieved images for all query images closely match their respective classes (e.g., sweaters are matched with sweaters, and pants are matched with pants). This high accuracy is reflected in the retrieval accuracy of 1.0000.
+
+Top-10 Similarity Results:
+- Precision: **0.7333** - This indicates that 73.33% of the retrieved images in the top-10 are relevant.
+- Recall: **0.0073** - Similar to the top-5 case, the recall remains low because only a small fraction of all relevant images is retrieved.
+- Retrieval Accuracy: **1.0000** - Similar to the top-5 results, for 100% of the queries, the most similar image is correctly classified.
+
 ### **2. ResNet101**
+
+#### Precision, Recall, and F1-Score Metrics:
+The evaluation metrics indicate the effectiveness of the retrieval process at different values of K (number of nearest neighbors retrieved):
+
+At K=1:
+- Precision: 0.789 (high)
+- Recall: 0.002 (very low)
+- F1-Score: 0.003
+- The high precision reflects the model's ability to identify the correct match for the closest neighbor. However, the recall is low as only the top neighbor is considered.
+
+At K=5:
+- Precision: 0.754
+- Recall: 0.008
+- F1-Score: 0.015
+- Precision decreases slightly as more neighbors are included, but recall improves marginally.
+
+At K=20:
+- Precision: 0.702
+- Recall: 0.052
+- F1-Score: 0.098
+- Recall improves significantly with higher K, but precision drops due to inclusion of less relevant neighbors.
+
 ### **3. SIFT**
+
+#### Summary of SIFT-Based Image Similarity Search:
+
+1. Similar Images (Same Class): Dress vs. T-shirt (Image pair 1-2).
+- Observation: A moderate similarity score of **66.67%** indicates SIFT's ability to detect generic shared features (e.g., edges or folds) between similar-class items.
+
+2. Completely Different Classes: Dress vs. T-shirt, Sneaker vs. T-shirt (Image pair 3-4 and Image pair 5-6).
+- Observation: Both comparisons yielded very low similarity scores (**0.00% and 20.00%**), with minimal or no matches detected.
+
+3. Identical Images: Identical dresses and near-identical dresses with slight variations (Image pair 7-8 and Image pair 9-10).
+- Observation: Both comparisons achieved perfect similarity scores (**100.00%**) and aligned keypoints correctly, with the number of matches being 3 and 2, respectively.
+
 ### **4. Siamese Network**
+
+
+
 
 ## References
 
