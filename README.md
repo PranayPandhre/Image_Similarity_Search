@@ -1,6 +1,6 @@
 #  Image Similarity Search using FMNIST dataset
 
-This repository contains my experiments on **Performing image similarity search** using **Autoencoders**, **ResNet101**, **Siamese_Network**, and **SIFT**. The experiments were conducted on the **Fashion MNIST (FMNIST)** dataset which contains grayscale fashion clothing images. The repository includes the experiments conducted using the mentioned methods, and the code documentation (which includes the results of the experiments) of each experiment in its respective folder.
+This repository contains my experiments on **Performing image similarity search** using **Autoencoder**, **ResNet101**, **Siamese_Network**, and **SIFT**. The experiments were conducted on the **Fashion MNIST (FMNIST)** dataset which contains grayscale fashion clothing images. The repository includes the experiments conducted using the mentioned methods, and the code documentation (which includes the results of the experiments) of each experiment in its respective folder.
 
 ---
 
@@ -19,7 +19,7 @@ This repository contains my experiments on **Performing image similarity search*
 
 The methodologies used for performing **Image similarity search** are as follows:
 
-- **Autoencoders**
+- **Autoencoder**
 - **ResNet101** (Deeper CNN model for better feature extraction compared to commonly used ResNet50
 - **Siamese Networks** for performing image similarity.
 - **SIFT** mathematical non-machine learning approach for performing image similarity.
@@ -40,7 +40,7 @@ The methodologies used for performing **Image similarity search** are as follows
 
 ```plaintext
 
-Autoencoders/
+Autoencoder/
 ├── Autoencoder.ipynb
 ├── Autoencoder_documentation.pdf
 ├── autoencoder_model.h5
@@ -73,7 +73,7 @@ An Autoencoder is a type of neural network designed for unsupervised learning th
 #### **Process**
 - Trained a convolutional autoencoder on the dataset.
 - This autoencoder uses convolutional layers (Conv2D) for feature extraction and representation learning, making it suitable for image data.
-- It is designed to handle spatial relationships in images (height, width, and channels), unlike traditional dense autoencoders that flatten input data.
+- It is designed to handle spatial relationships in images (height, width, and channels), unlike traditional dense Autoencoder that flatten input data.
 
 #### **Advantages**
 - They are computationally less intensive compared to deep CNNs and can be tuned for efficient encoding-decoding operations.
@@ -97,7 +97,7 @@ ResNet (Residual Network) is a deep convolutional neural network that revolution
 ---
 
 ### **3. SIFT**
-- The SIFT method is widely used for image similarity search due to its robustness and ability to identify and match distinctive features in images, regardless of variations. SIFT methodology mainly involves keypoints and descriptors. Keypoints and descriptors  are fundamental concepts used to identify and describe distinctive regions in an image for tasks like similarity search. Keypoints identify where the distinctive features are located in the image. Each keypoint corresponds to a specific pixel in the image, typically representing corners, edges, or blobs that are rich in texture and less likely to change under transformations. Descriptors describe what those features look like. SIFT generates a 128-dimensional vector for each keypoint. This vector encodes gradient magnitudes and directions in a local region around the keypoint.
+The SIFT method is widely used for image similarity search due to its robustness and ability to identify and match distinctive features in images, regardless of variations. SIFT methodology mainly involves keypoints and descriptors. Keypoints and descriptors  are fundamental concepts used to identify and describe distinctive regions in an image for tasks like similarity search. Keypoints identify where the distinctive features are located in the image. Each keypoint corresponds to a specific pixel in the image, typically representing corners, edges, or blobs that are rich in texture and less likely to change under transformations. Descriptors describe what those features look like. SIFT generates a 128-dimensional vector for each keypoint. This vector encodes gradient magnitudes and directions in a local region around the keypoint.
 
 #### **Process**
 - The SIFT process identifies keypoints (scale-invariant points of interest) and computes feature descriptors for images. Descriptors from two images are matched using a brute-force matcher with Lowe's ratio test to filter good matches.
@@ -112,7 +112,7 @@ ResNet (Residual Network) is a deep convolutional neural network that revolution
 ---
 
 ### **4. Siamese Network**
-- A Siamese Network is a neural network architecture specifically designed for similarity learning, where the goal is to determine whether two inputs are similar or dissimilar. It consists of two identical subnetworks that process two inputs independently and produce feature embeddings, which are then compared using a distance metric (e.g., Euclidean distance) to quantify similarity. Siamese Networks are widely used for image similarity search because they are explicitly trained to learn a similarity function rather than classifying inputs.
+A Siamese Network is a neural network architecture specifically designed for similarity learning, where the goal is to determine whether two inputs are similar or dissimilar. It consists of two identical subnetworks that process two inputs independently and produce feature embeddings, which are then compared using a distance metric (e.g., Euclidean distance) to quantify similarity. Siamese Networks are widely used for image similarity search because they are explicitly trained to learn a similarity function rather than classifying inputs.
 
 #### **Process**
 - The dataset is prepared using the **create_triplets** function, which creates triplets of images (anchor, positive, and negative) to train the network. Positive images belong to the same class as the anchor, while negative images belong to a different class.
@@ -193,7 +193,7 @@ Precision, Recall, and Accuracy:
 
 ## Summary
 
-The evaluation of image similarity search methods, including Autoencoders, ResNet101, SIFT, and Siamese Networks, highlighted their respective strengths and weaknesses. Autoencoders performed well with a 100% retrieval accuracy and high precision (80% for top-5 and 73.33% for top-10), but their low recall indicates limited coverage of all relevant images in the database. As the k values were only 5 and 10 for Autoencoder, the recall value was very low as the simialr images retrieved from the database were less. ResNet101 demonstrated robust precision across varying K values, with precision at 78.9% for K=1, but its recall improved only marginally with higher K, making it suitable for retrieving the most similar items but less effective for comprehensive searches. SIFT excelled in matching identical and near-identical images with perfect scores (100%) and moderate similarity for related classes (66.67%), but its performance dropped significantly for inter-class comparisons due to its reliance on handcrafted features. Among the methods, the Siamese Network stood out as the most effective, achieving a **93% accuracy**, **high precision (81.80%)**, and excellent consistency in retrieving visually similar images. Its ability to learn similarity directly through supervised training and generate embeddings tailored for similarity tasks made it the most robust and scalable method for image retrieval. Th autoencoder gives 100% accuracy but has low recall because the number of similar generated images are less but the Siamese Network is the best method due to its ability to directly learn a similarity function, robust feature embeddings, and scalability for new tasks, making it highly effective for image retrieval applications.
+The evaluation of image similarity search methods, including Autoencoder, ResNet101, SIFT, and Siamese Networks, highlighted their respective strengths and weaknesses. Autoencoder performed well with a 100% retrieval accuracy and high precision (80% for top-5 and 73.33% for top-10), but their low recall indicates limited coverage of all relevant images in the database. As the k values were only 5 and 10 for Autoencoder, the recall value was very low as the simialr images retrieved from the database were less. ResNet101 demonstrated robust precision across varying K values, with precision at 78.9% for K=1, but its recall improved only marginally with higher K, making it suitable for retrieving the most similar items but less effective for comprehensive searches. SIFT excelled in matching identical and near-identical images with perfect scores (100%) and moderate similarity for related classes (66.67%), but its performance dropped significantly for inter-class comparisons due to its reliance on handcrafted features. Among the methods, the Siamese Network stood out as the most effective, achieving a **93% accuracy**, **high precision (81.80%)**, and excellent consistency in retrieving visually similar images. Its ability to learn similarity directly through supervised training and generate embeddings tailored for similarity tasks made it the most robust and scalable method for image retrieval. Th autoencoder gives 100% accuracy but has low recall because the number of similar generated images are less but the Siamese Network is the best method due to its ability to directly learn a similarity function, robust feature embeddings, and scalability for new tasks, making it highly effective for image retrieval applications.
 
 ---
 
