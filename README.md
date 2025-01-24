@@ -63,6 +63,7 @@ SIFT/
 README.md
 
 ```
+---
 
 ## Methods Used
 
@@ -188,9 +189,13 @@ Precision, Recall, and Accuracy:
 - The high accuracy of 93% shows that the model performs well in correctly classifying or matching images.
 - The retrieved images are visually consistent with the query, confirming the model's effectiveness in similarity-based retrieval.
 
+---
+
 ## Summary of Results
 
 The evaluation of image similarity search methods, including Autoencoders, ResNet101, SIFT, and Siamese Networks, highlighted their respective strengths and weaknesses. Autoencoders performed well with a 100% retrieval accuracy and high precision (80% for top-5 and 73.33% for top-10), but their low recall indicates limited coverage of all relevant images in the database. As the k values were only 5 and 10 for Autoencoder, the recall value was very low as the simialr images retrieved from the database were less. ResNet101 demonstrated robust precision across varying K values, with precision at 78.9% for K=1, but its recall improved only marginally with higher K, making it suitable for retrieving the most similar items but less effective for comprehensive searches. SIFT excelled in matching identical and near-identical images with perfect scores (100%) and moderate similarity for related classes (66.67%), but its performance dropped significantly for inter-class comparisons due to its reliance on handcrafted features. Among the methods, the Siamese Network stood out as the most effective, achieving a **93% accuracy**, **high precision (81.80%)**, and excellent consistency in retrieving visually similar images. Its ability to learn similarity directly through supervised training and generate embeddings tailored for similarity tasks made it the most robust and scalable method for image retrieval. Th autoencoder gives 100% accuracy but has low recall because the number of similar generated images are less but the Siamese Network is the best method due to its ability to directly learn a similarity function, robust feature embeddings, and scalability for new tasks, making it highly effective for image retrieval applications.
+
+---
 
 ## References
 
