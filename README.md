@@ -149,22 +149,22 @@ Top-10 Similarity Results:
 The evaluation metrics indicate the effectiveness of the retrieval process at different values of K (number of nearest neighbors retrieved):
 
 At K=1:
-- Precision: 0.789 (high)
-- Recall: 0.002 (very low)
+- Precision: 0.789
+- Recall: 0.002 - This suggests that the retrieved images account for only a small fraction of all relevant images for the query class. As k=1, the number of retrieved images are 1 and hence the recall value is really low
 - F1-Score: 0.003
-- The high precision reflects the model's ability to identify the correct match for the closest neighbor. However, the recall is low as only the top neighbor is considered.
+- The high precision reflects the model's ability to identify the correct match for the closest neighbor.
 
 At K=5:
 - Precision: 0.754
-- Recall: 0.008
+- Recall: 0.008 - This suggests that the retrieved images account for only a small fraction of all relevant images for the query class. As k=5, the number of retrieved images are 5 and hence the recall value is low but better compared to recall value of k=1.
 - F1-Score: 0.015
-- Precision decreases slightly as more neighbors are included, but recall improves marginally.
+- Precision decreases slightly as more neighbors are included.
 
 At K=20:
 - Precision: 0.702
-- Recall: 0.052
+- Recall: 0.052 - We can see that as K increases the recall value increases as more similar images are matched
 - F1-Score: 0.098
-- Recall improves significantly with higher K, but precision drops due to inclusion of less relevant neighbors.
+- Precision drops due to inclusion of less relevant neighbors.
 
 ### **3. SIFT Results:**
 
@@ -190,7 +190,7 @@ Precision, Recall, and Accuracy:
 
 ## Summary of Results
 
-
+The evaluation of image similarity search methods, including Autoencoders, ResNet101, SIFT, and Siamese Networks, highlighted their respective strengths and weaknesses. Autoencoders performed well with a 100% retrieval accuracy and high precision (80% for top-5 and 73.33% for top-10), but their low recall indicates limited coverage of all relevant images in the database. As the k values were only 5 and 10 for Autoencoder, the recall value was very low as the simialr images retrieved from the database were less. ResNet101 demonstrated robust precision across varying K values, with precision at 78.9% for K=1, but its recall improved only marginally with higher K, making it suitable for retrieving the most similar items but less effective for comprehensive searches. SIFT excelled in matching identical and near-identical images with perfect scores (100%) and moderate similarity for related classes (66.67%), but its performance dropped significantly for inter-class comparisons due to its reliance on handcrafted features. Among the methods, the Siamese Network stood out as the most effective, achieving a **93% accuracy**, **high precision (81.80%)**, and excellent consistency in retrieving visually similar images. Its ability to learn similarity directly through supervised training and generate embeddings tailored for similarity tasks made it the most robust and scalable method for image retrieval. Th autoencoder gives 100% accuracy but has low recall because the number of similar generated images are less but the Siamese Network is the best method due to its ability to directly learn a similarity function, robust feature embeddings, and scalability for new tasks, making it highly effective for image retrieval applications.
 
 ## References
 
