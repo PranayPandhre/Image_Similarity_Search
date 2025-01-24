@@ -11,7 +11,6 @@ This repository contains my experiments on **Performing image similarity search*
 - **[Methods Used](#methods-used)**
 - **[Results_Analysis](#results_analysis)**
 - **[References](#references)**
-- **[Requirements](#requirements)**
 
 ---
 
@@ -57,9 +56,7 @@ SIFT/
 ├── SIFT.ipynb
 ├── SIFT_documentation.pdf
 
-Scores/
-│   ├── (Screenshots of All approaches model scores)
-│
+
 README.md
 ```
 
@@ -180,8 +177,13 @@ At K=20:
 
 ### **4. Siamese Network**
 
-
-
+#### Performance Metrics
+Precision, Recall, and Accuracy:
+- Precision: 0.8180
+- Recall: 0.0206
+- Accuracy: 0.9300
+- The high accuracy of 93% shows that the model performs well in correctly classifying or matching images.
+- The retrieved images are visually consistent with the query, confirming the model's effectiveness in similarity-based retrieval.
 
 ## References
 
@@ -190,5 +192,3 @@ At K=20:
 - [Robust image matching based on the information of SIFT](https://www.sciencedirect.com/science/article/abs/pii/S0030402618309021?via%3Dihub)
 - [Siamese Network Features for Image Matching](https://oulurepo.oulu.fi/bitstream/handle/10024/24464/nbnfi-fe2019090526960.pdf;jsessionid=7F6C93BB152953832D853F0934BCD262?sequence=1)
 - [FMNIST Dataset Overview](https://github.com/zalandoresearch/fashion-mnist)
-
-## Requirements
